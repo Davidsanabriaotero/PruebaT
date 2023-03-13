@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+{% load static %}
+<head>
+  <title>Gestión de Productos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'iconos/bootstrap-icons.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/base.css' %}">
+  <link href="{% static 'DataTables/datatables.css' %}" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" title="Ir al inicio" href="{% url 'listarproductos' %}">Gestión de Productos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'listarproductos' %}">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'listarproductos' %}">Detalles</a>
+            </li>
+          </ul>
+          {% if request.user.is_authenticated %}
+          <ul class="navbar-nav d-flex my-2 my-lg-0">
+            <li class="nav-item">
+              <i class="bi bi-person-circle" style="color:white">Usuario: <strong>{{user.username}}</strong></i>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+            </li>
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </nav>    
+  </header>
+

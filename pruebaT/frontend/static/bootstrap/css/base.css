@@ -1,0 +1,166 @@
+:root{
+  --color: rgba(255, 255, 255, 0.507)
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 40px;
+  padding-bottom: 5em;
+}
+.tarjeta {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+.img-elecciones {
+  width: 12em;
+  height: 12em;
+  object-position: center;
+}
+#tarjeta {
+  align-items: center;
+  width: 16.2em;
+  height: 27em;
+  text-align: center;
+  padding: 3em 0 3em 0;
+  padding-bottom: 3em;
+  
+}
+
+#tarjeta-participacion{
+  align-items: center;
+  width: 14em;
+  height: 27em;
+  text-align: center;
+  padding: 3em 0 3em 0;
+  padding-bottom: 3em;
+}
+
+#tarjeta-index {
+  align-items: center;
+  width: 16em;
+  height: 30em;
+  text-align: center;
+  padding: 3em 0 3em 0;
+  padding-bottom: 3em;
+}
+
+#tarjeta-administracion {
+  align-items: center;
+  width: 17.3em;
+  height: 27em;
+  text-align: center;
+  padding: 3em 0 3em 0;
+  padding-bottom: 3em;
+}
+
+footer {
+  padding: 4em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#idezona {
+  width: 25em;
+}
+#candidato {
+  text-align: center;
+  width: 28em;
+}
+#idepuesto {
+  width: 25em;
+}
+
+.graficas {
+  margin-top: 3em;
+  padding-top: 3em;
+}
+/**
+_________________________________
+Scan camara
+_________________________________
+*/
+.scan {
+  display: flex;
+  width: 450px;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 15%;
+	margin-left: 50%;
+	border: dashed .25em rgb(90, 85, 85);
+	transform: translate(-50%);
+}
+
+.scan > .marco{
+  width: 100%;
+  height: 100%;
+  border-bottom: 120px solid var(--color);
+  border-top: 120px solid var(--color);
+  border-left: 10px solid var(--color);
+  border-right: 10px solid var(--color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0.5;
+}
+
+.scan > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scan::after {
+	content: '';
+	background: rgb(13, 0, 252);
+	width: 0.5em;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0%;
+	right: 0;
+	left: 0;
+	bottom: 0;
+  margin-left: 50%;
+	z-index: 1.5;
+  opacity: 0.3;
+	animation: 2s infinite ease-in-out roll;
+}
+
+@keyframes roll {
+	0% {
+		transform: translateX(200px);
+	}
+	50% {
+		transform: translateX(-200px);
+	}
+	100% {
+		transform: translateX(200px);
+	}
+}
+
+#tomar{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#canvas {
+  top: 0;
+}

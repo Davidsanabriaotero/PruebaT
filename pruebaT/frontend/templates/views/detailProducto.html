@@ -1,0 +1,50 @@
+{% load static %}
+{% block content %}
+<main>
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles del Producto: {{data.idProducto}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {% if data %}
+                    <table class="table table-bordered table-striped table-responsive">
+                        <thead class="text-center table-dark">
+                            {% block columns %}
+                            {% endblock %}
+                            <tr>
+                            <th class="text-center" scope="col">Cantidad</th>
+                            <th class="text-center" scope="col">Valor Total</th>
+                            <th class="text-center" scope="col">Valor Iva</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            {% load humanize %}
+                            {% block rows %}
+                            {% endblock %}
+                            {% for data in data %}
+                            <tr>
+                                <td class="text-center">{{data.cantidad}}</td>
+                                <td class="text-center">${{data.valorTotal|intcomma}}</td>
+                                <td class="text-center">${{data.valorIva|intcomma}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table> 
+                    {% else %}
+                        <div class="alert alert-dark text-center" role="alert"><i class="bi bi-info-circle-fill"></i>
+                            <span> Aún no hay asignado un detalle al Producto <a class="link" onclick="abrir_modal_ver('{% url 'creardetalle' %}')"title="Asignar Detalle">
+                                Asignar Aquí
+                            </a></span>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
