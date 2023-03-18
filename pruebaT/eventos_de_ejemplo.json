@@ -1,0 +1,55 @@
+[
+    {
+      "model": "Api.Eventos",
+      "fields": {
+        "nombre": "Evento 1",
+        "tipo": "Tipo1",
+        "descripcion": "Este es un evento de ejemplo 1",
+        "fecha": "2023-03-19T00:00:00Z",
+        "estado": "Pendiente por revisar",
+        "gestion": null,
+        "usuario": 1,
+        "eliminado": false
+      }
+    },
+    {
+      "model": "Api.Eventos",
+      "fields": {
+        "nombre": "Evento 2",
+        "tipo": "Tipo2",
+        "descripcion": "Este es otro evento de ejemplo 2",
+        "fecha": "2023-03-19T00:00:00Z",
+        "estado": "Pendiente por revisar",
+        "gestion": null,
+        "usuario": 1,
+        "eliminado": false
+      }
+    },
+    {
+      "model": "Api.Eventos",
+      "fields": {
+        "nombre": "Evento 3",
+        "tipo": "Tipo2",
+        "descripcion": "Este es otro evento de ejemplo 3",
+        "fecha": "2023-03-19T00:00:00Z",
+        "estado": "Pendiente por revisar",
+        "gestion": "Sin gestión",
+        "usuario": 1,
+        "eliminado": false
+      }
+    },
+    {
+      "model": "Api.Eventos",
+      "fields": {
+        "nombre": "Evento 4",
+        "tipo": "Tipo2",
+        "descripcion": "Este es otro evento de ejemplo 4",
+        "fecha": "2023-03-19T00:00:00Z",
+        "estado": "Revisado",
+        "gestion": "Requiere gestión",
+        "usuario": 1,
+        "eliminado": false
+      }
+    }
+]
+  
