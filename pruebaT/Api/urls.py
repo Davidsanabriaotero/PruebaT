@@ -1,14 +1,12 @@
 from django.urls import path, include
-from Api import views
-from rest_framework import routers
+from rest_framework.routers import DefaultRouter
+from .views import EventosViewSet,LogEventosViewSet
 
-#Declaración del routers
-ruta = routers.DefaultRouter()
+rutas = DefaultRouter()
+rutas.register(r'eventos', EventosViewSet)
+rutas.register(r'logeventos', LogEventosViewSet)
 
-#Incorporación de las viewSet y Registración de los Router
-ruta.register('Productos', views.ProductosViewSet,'Productos')
-ruta.register('DetallesProductos', views.DetallesProductosViewSet,'DetallesProductos')
-
-urlpatterns = ruta.urls
-
+urlpatterns = [
+    path('api/', include(rutas.urls)),
+]
 

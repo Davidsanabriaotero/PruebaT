@@ -41,21 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'Api',
-    'frontend',
     'rest_framework',
-    #Necesarias
-    'django.contrib.sites',
-    'rest_framework.authtoken',
 
 ]
-
-SITE_ID = 1
-
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -99,12 +87,15 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'pruebaT',
+           'USER': 'postgres',
+           'PASSWORD': 'javacode7',
+           'HOST': 'localhost',
+           'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -143,12 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-if Sistema.system() == 'Windows':
-    STATIC_ROOT = os.path.join(BASE_DIR, 'frontend\\static')
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend\\media')
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static')
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

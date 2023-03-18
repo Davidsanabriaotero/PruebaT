@@ -18,12 +18,9 @@ from django.urls import path,include
 
 #importar urls desde Api
 from Api.urls import *
-from frontend.urls import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #Registro de Urls de la Api
-    path('api/',include(ruta.urls)),
-    #Registro de Urls del cliente
-    path('',include('frontend.urls')),
+    path('api/',include(rutas.urls)),
 ]

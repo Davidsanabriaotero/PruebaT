@@ -1,14 +1,15 @@
 from .models import *
 from rest_framework import serializers
 
-class ProductosSerializer(serializers.ModelSerializer):
-  class Meta:
-    model = Productos
-    fields = '__all__'
+class EventosSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Eventos
+        fields = '__all__'
+        read_only_fields = ('estado','gestion','eliminado',"usuario")
 
-class DetallesProductosSerializer(serializers.ModelSerializer):
-  class Meta:
-    model = DetalleProductos
-    fields = ('idDetalleProducto','idProducto','cantidad','valorTotal','valorIva')
-    read_only_fields = ('valorTotal','valorIva')
+class LogsEventosSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = logEvento
+        fields = '__all__'
+        read_only_fields = ('idEvento','fecha','accion','usuario')
   
